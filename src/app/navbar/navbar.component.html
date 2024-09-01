@@ -1,0 +1,23 @@
+<div class="topnav">
+    <a [ngClass]="{'active': nav.isActive}" *ngFor="let nav of navbar">{{nav.name}}</a>
+</div>
+
+<div style="padding-left:16px; margin-top: 50px;">
+    <input [(ngModel)]="navInput" (ngModelChange)="OnInputChange($event)" placeholder="Enter Navbar Item" />
+    <button (click)="addNavbar(navInput)">Add Navbar</button>
+</div>
+
+<table style="margin-top: 50px;">
+    <thead>
+        <tr>
+            <td>Nabar Name</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let nav of navbar; let i index">
+            <td>{{nav.name}}</td>
+            <td><button (click)="remove(i)">Remove</button></td>
+        </tr>
+    </tbody>
+</table>

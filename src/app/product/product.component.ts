@@ -12,7 +12,7 @@ export class ProductComponent implements OnInit {
 
   public cmpName: string = "product doe not works!";
 
-  public products: ProdModel[] = [
+  public products: any = [
     {
       "name": "Classic White T-Shirt",
       "imageUrl": "https://urturms.com/cdn/shop/files/02_4395d9f8-c97b-461f-b029-c648fcb4e4b4.jpg?v=1722596311&width=1500",
@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit {
     {
       "name": "Blue Denim Jeans",
       "imageUrl": "https://via.placeholder.com/150/0000FF/FFFFFF?text=Blue+Jeans",
-      "price": 49.99,
+      "price": 490.99,
       "color": "Blue",
       "size": ["32", "34", "36", "38"]
     },
@@ -87,7 +87,7 @@ export class ProductComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.products.forEach(item => {
+    this.products.forEach((item:any) => {
       console.log(item.name)
     })
   }
@@ -101,4 +101,5 @@ export class ProdModel {
   public color: string | undefined;
   public size: string[] | undefined;
 }
+
 
